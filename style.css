@@ -1,4 +1,3 @@
-/* Genel düzeltmeler */
 * {
   margin: 0;
   padding: 0;
@@ -7,60 +6,159 @@
 
 body {
   background-color: #f9f9f9;
-  font-family: 'Coming Soon', cursive;
+  font-family: 'sans-serif', cursive;
   text-align: center;
   color: #333;
-}
-
-nav {
-  background-color: #E6DAF5;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-nav ul {
-  width: 100%;
-  justify-content: flex-end;
-  align-items: center;
-  display: flex;
-  list-style-type: none;
-  padding: 0;
   margin: 0;
-    display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-@media screen and (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
 }
 
-nav li {
-  height: 50px;
-}
-
-nav a {
-  height: 100%;
-  padding: 0 30px;
-  text-decoration: none;
+/* Navbar ve Navigasyon Menüsü */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #e9d9f6; /* Navbar arka plan rengi */
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black; /* Logo metin rengi */
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center; /* Menü içindeki öğeleri dikeyde ortala */
+}
+
+.menu a {
+  text-decoration: none;
+  color: black; /* Navigasyon link metin rengi */
+  font-weight: 500;
+  padding: 8px 15px; /* Tıklanabilir alanı genişletmek için */
+  border-radius: 5px; /* Hover efektiyle uyumlu olması için */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Yumuşak geçişler */
+}
+
+/* Navigasyon linklerinin üzerine gelindiğinde şeffaf beyaz efekt */
+.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Yüzde 20 şeffaflıkta beyaz */
+  color: black; /* Hover anında metin rengi, isterseniz değiştirebilirsiniz */
+}
+
+/* Hakkımda (veya diğer aktif linkler) için siyah çizgiyi kaldırma */
+.menu a.active {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: black;
+}
+
+/* Hamburger menü simgesi */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
   color: black;
 }
 
-nav a:hover {
-  background-color: #f0f0f0;
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #e9d9f6;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
 
-nav li:first-child {
-  margin-right: auto;
+/* Dil değiştirme butonu */
+#lang-toggle {
+  /* Diğer menü linkleriyle aynı başlangıç görünümü */
+  background-color: transparent; /* Şeffaf arka plan */
+  color: black; /* Metin rengi siyah */
+  border: none;
+  padding: 8px 15px; /* Diğer linklerle aynı padding */
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Yumuşak geçişler */
+
+  /* İkon ve metni dikeyde ortalamak ve aralarında boşluk bırakmak için */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* İkon ve metin arasına boşluk */
 }
+
+#lang-toggle:hover {
+  /* Fareyle üzerine gelince diğer menü linkleri gibi şeffaf beyaz */
+  background-color: rgba(255, 255, 255, 0.2);
+  color: black; /* Hover anında metin rengi */
+}
+
+#lang-toggle img {
+    vertical-align: middle;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.lang-text {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+
+/* Tüm ana bölümler için genel stil */
+.main-container,
+.education-section,
+#sertifika,
+#projelerim {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  padding-top: 100px; /* Navbar'ın kapladığı alan için yeterli boşluk */
+}
+
+/* Hakkımda bölümü (main-container) */
+.profile-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 20px 0;
+}
+.description {
+  max-width: 600px;
+  margin: 30px auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Sosyal Medya İkonları */
 .social-container {
   display: flex;
   justify-content: center;
@@ -75,68 +173,28 @@ nav li:first-child {
 .icon {
   width: 60px;
   height: 60px;
-  background-color: #E6DAF5; /* Butonun arka planı beyaz */
-  color: black;            /* İkon rengi */
-  border-radius: 50%;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
-  margin-bottom: 10px;
-  margin-top: 20px;
-}
-
-.icon:hover {
-  background-color: #E6DAF5; /* Hover'da butonun arka planı */
-  color: #000;               /* Hover'da ikonun rengi */
-}
-
-
-.icon-container {
-  position: relative;
-}
-
-
-/* Tooltip */
-.tooltip {
-  position: absolute;
-  top: -35px;
   background-color: #E6DAF5;
-  color: #000;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 14px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.icon:hover .tooltip {
-  opacity: 1;
-}
-
-.icon {
   color: white;
   border-radius: 50%;
   font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
 }
 
 .icon:hover {
-  background-color: #E6DAF5;
-  color: #000;
+  background-color: #d1bfe9;
+  transform: translateY(-5px);
 }
 
-/* Tooltip */
 .tooltip {
   position: absolute;
   top: -35px;
@@ -155,26 +213,29 @@ nav li:first-child {
   opacity: 1;
 }
 
-
-/* Ana içerik */
-.main-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 20px;
+/* Eğitim Kartları */
+.education-section {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-.card-container {
+.education-section h2 {
+  margin-bottom: 20px;
+}
+
+.cards {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 50px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   perspective: 1000px;
+  margin: 0;
 }
 
 .flip-card-inner {
@@ -215,99 +276,20 @@ nav li:first-child {
   transform: rotateY(180deg);
 }
 
-.tech-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin: 15px 0;
+/* Sertifikalar Bölümü */
+#sertifika {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-.tech-tags span {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 14px;
+#sertifika h1 {
+  margin-bottom: 20px;
 }
 
-.view-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: white;
-  color: #2196f3;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.icon {
-  margin-bottom: 10px;
-  margin-top: 20px;
-  height: 50px;
-  width: 60px;
-}
-
-/* Açıklama */
-.description {
-  max-width: 600px;
-  margin: 30px auto;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.profile-img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  margin: 20px 0;
-}
-
-.education-section {
-  text-align: center;
-  margin: 40px auto;
-}
-
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.flip-card {
-  width: 250px;
-  height: 250px;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-
-.flip-card-front,
-.flip-card-back {
-  padding: 20px;
-}
-
-/* Sertifikalar */
-.certificate-section {
-  margin-top: 50px;
-}
-
-/* ← EKLENDİ: Sertifika kapsayıcısı */
 .certificate-row {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -334,11 +316,6 @@ nav li:first-child {
   transform: scale(1.05);
 }
 
-.certificate-image:hover .view-button {
-  opacity: 1;
-}
-
-/* ← EKLENDİ: Görüntüle butonunun görünürlüğü için */
 .certificate-image .view-button {
   position: absolute;
   top: 50%;
@@ -354,15 +331,31 @@ nav li:first-child {
   font-weight: bold;
 }
 
-.certificate-title {
+.certificate-image:hover .view-button {
+  opacity: 1;
+}
+
+.certificate-caption {
   margin-top: 10px;
   font-size: 1rem;
   color: #333;
 }
+
+/* Projeler Bölümü ve Kartları */
+#projelerim {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+#projelerim h1 {
+  margin-bottom: 20px;
+}
+
 .project-card {
   width: 300px;
-  margin: 20px auto;
+  margin: 0 auto;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .project-image {
@@ -379,7 +372,6 @@ nav li:first-child {
   transition: transform 0.4s ease;
 }
 
-/* Butonlar başlangıçta görünmez */
 .project-buttons {
   position: absolute;
   top: 50%;
@@ -391,7 +383,6 @@ nav li:first-child {
   transition: opacity 0.3s ease;
 }
 
-/* Hover durumunda butonları göster */
 .project-image:hover .project-buttons {
   opacity: 1;
 }
@@ -415,4 +406,3 @@ nav li:first-child {
   font-size: 1rem;
   color: #333;
 }
-
