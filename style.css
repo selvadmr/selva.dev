@@ -1,0 +1,403 @@
+/* Genel düzeltmeler */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9f9f9;
+  font-family: 'Coming Soon', cursive;
+  text-align: center;
+  color: #333;
+}
+
+nav {
+  background-color: #E6DAF5;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  height: 50px;
+}
+
+nav a {
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+nav a:hover {
+  background-color: #f0f0f0;
+}
+
+nav li:first-child {
+  margin-right: auto;
+}
+.social-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.icon-container {
+  position: relative;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  background-color: #E6DAF5; /* Butonun arka planı beyaz */
+  color: black;            /* İkon rengi */
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.icon:hover {
+  background-color: #E6DAF5; /* Hover'da butonun arka planı */
+  color: #000;               /* Hover'da ikonun rengi */
+}
+
+
+.icon-container {
+  position: relative;
+}
+
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  top: -35px;
+  background-color: #E6DAF5;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.icon:hover .tooltip {
+  opacity: 1;
+}
+
+.icon {
+  color: white;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.icon:hover {
+  background-color: #E6DAF5;
+  color: #000;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  top: -35px;
+  background-color: #E6DAF5;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.icon:hover .tooltip {
+  opacity: 1;
+}
+
+
+/* Ana içerik */
+.main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.flip-card-front {
+  background: white;
+}
+
+.flip-card-back {
+  background: #E6DAF5;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.tech-tags span {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.view-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: white;
+  color: #2196f3;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.icon {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  height: 50px;
+  width: 60px;
+}
+
+/* Açıklama */
+.description {
+  max-width: 600px;
+  margin: 30px auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 20px 0;
+}
+
+.education-section {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.flip-card {
+  width: 250px;
+  height: 250px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.flip-card-front,
+.flip-card-back {
+  padding: 20px;
+}
+
+/* Sertifikalar */
+.certificate-section {
+  margin-top: 50px;
+}
+
+/* ← EKLENDİ: Sertifika kapsayıcısı */
+.certificate-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.certificate-card {
+  width: 300px;
+  text-align: center;
+}
+
+.certificate-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.certificate-image:hover img {
+  transform: scale(1.05);
+}
+
+.certificate-image:hover .view-button {
+  opacity: 1;
+}
+
+/* ← EKLENDİ: Görüntüle butonunun görünürlüğü için */
+.certificate-image .view-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #6c5ce7;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-weight: bold;
+}
+
+.certificate-title {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+.project-card {
+  width: 300px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Butonlar başlangıçta görünmez */
+.project-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  display: flex;
+  gap: 10px;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover durumunda butonları göster */
+.project-image:hover .project-buttons {
+  opacity: 1;
+}
+
+.project-button {
+  background-color: #6c5ce7;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.project-button:hover {
+  background-color: #5948c1;
+}
+
+.project-title {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+}

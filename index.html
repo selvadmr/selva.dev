@@ -1,1 +1,130 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>Document</title> </head> <body></body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <title>Selva Demir</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Selva Demir</a></li>
+      <li><a href="#hakkimda">Hakkımda</a></li>
+      <li><a href="#egitim">Eğitim</a></li>
+      <li><a href="#sertifika">Sertifika</a></li>
+      <li><a href="#projelerim">Projelerim</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hakkımda -->
+  <div class="main-container" id="hakkimda">
+    <h1>Selamm, ben Selva</h1>
+    <img src="foto5.jpg" class="profile-img" />
+    <div class="description">
+      <p>Ben Selva Demir, 16 yaşında bir 11. sınıf öğrencisiyim. Teknolojiye duyduğum ilgi sayesinde mobil uygulama geliştirme,
+            web sitesi yapımı ve frontend tasarımı alanlarında eğitim aldım ve kendimi bu alanlarda geliştirmeye çalışıyorum.Şuanda kodluyoruz'da aktif olarak gönüllülük yapıyorum.</p>
+    </div>
+
+    <!-- Sosyal İkonlar -->
+    <div class="social-container">
+      <div class="icon-container">
+        <a href="https://www.linkedin.com/in/selva-demir/" target="_blank" class="icon linkedin">
+          <span class="tooltip">LinkedIn</span>
+          <img src="https://cdn-icons-png.flaticon.com/64/1384/1384014.png" alt="LinkedIn">
+        </a>
+      </div>
+      <div class="icon-container">
+        <a href="https://github.com/selvadmr" target="_blank" class="icon github">
+          <span class="tooltip">GitHub</span>
+          <img src="https://cdn-icons-png.flaticon.com/128/1051/1051377.png" alt="GitHub Icon" width="60" height="60" />
+        </a>
+      </div>
+      <div class="icon-container">
+        <a href="https://instagram.com" target="_blank" class="icon instagram">
+          <span class="tooltip">Instagram</span>
+          <img src="https://cdn-icons-png.flaticon.com/64/3670/3670274.png" alt="Instagram">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Eğitim -->
+  <div class="education-section" id="egitim">
+    <h2>Eğitim<br><span>Aldığım eğitimler:</span></h2>
+    <br><br>
+    <div class="cards">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://cdn-icons-png.flaticon.com/512/6062/6062646.png" width="60" height="50">
+            <h3>Front-End Web Geliştirme</h3>
+          </div>
+          <div class="flip-card-back">
+            <h3>Front-End Web Geliştirme:</h3>
+            <h4>Mayıs 2025’te mezun oldum. HTML ve CSS dillerini öğrenerek temel web sayfası yapımında yetkinlik kazandım.</h4>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://cdn-icons-png.flaticon.com/512/7991/7991055.png" width="60" height="50">
+            <h3>Mobil Uygulama Geliştirme</h3>
+          </div>
+          <div class="flip-card-back">
+            <h3>Mobil Uygulama Geliştirme:</h3>
+            <h4> Kasım20242de mezun oldum.Flutter eğitimiyle Dart dilini öğrendim. Mobil arayüz geliştirme ve uygulama mantığını kavradım.</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sertifikalar -->
+  <div id="sertifika">
+    <br><br>
+    <h1>Sertifikalarım:</h1>
+    <br><br>
+    <div class="certificate-row">
+      <div class="certificate-card">
+        <div class="certificate-image">
+          <img src="sertifika1.jpg" alt="Frontend Sertifikası">
+          <a href="https://verified.sertifier.com/tr/verify/18535229119971/?ref=email" target="_blank" class="view-button">Görüntüle</a>
+        </div>
+        <div class="certificate-caption">Kodluyoruz - Frontend Web Geliştirme Eğitimi Sertifikası</div>
+      </div>
+
+      <div class="certificate-card">
+        <div class="certificate-image">
+          <img src="sertifika2.jpg" alt="Mobil Sertifikası">
+          <a href="https://verified.sertifier.com/tr/verify/59244650037675/" target="_blank" class="view-button">Görüntüle</a>
+        </div>
+        <div class="certificate-caption">Kodluyoruz - Mobil Uygulama Geliştirme Sertifikası</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projelerim -->
+  <div id="projelerim">
+    <br><br>
+    <h1>Projelerim:</h1>
+    <div class="project-card">
+      <div class="project-image">
+        <img src="proje.jpg" alt="Proje adı" >
+        <div class="project-buttons">
+          <a href="http://127.0.0.1:5500/index.html#" class="project-button" target="_blank">Link</a>
+          <a href="https://github.com/selvadmr/selva.dev" class="project-button" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div class="project-title">Kişisel Blog Sayfası</div>
+    </div>
+  </div>
+</body>
+</html>
