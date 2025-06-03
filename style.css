@@ -110,9 +110,9 @@ body {
 }
 
 #lang-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.4); /* Daha görünür şeffaflık */
-  backdrop-filter: blur(8px); /* 🎯 Bu kısım projelerim efekti */
-  -webkit-backdrop-filter: blur(8px); /* Safari desteği için */
+  background-color: rgba(255, 255, 255, 0.4); 
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .lang-text {
