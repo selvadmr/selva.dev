@@ -1,17 +1,16 @@
 window.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('nav-links');
-  const langToggle = document.getElementById('lang-toggle'); // Tüm butonu seçiyoruz
-  const langText = document.querySelector('#lang-toggle .lang-text'); // Sadece metin kısmını seçiyoruz
+  const langToggle = document.getElementById('lang-toggle');
+  const langText = document.querySelector('#lang-toggle .lang-text');
 
-  // Çevirilerimizi bir obje içinde, data-key'lerle eşleşecek şekilde saklıyoruz
   const translations = {
     'tr': {
       'about_me': 'Hakkımda',
       'education': 'Eğitim',
       'certificates': 'Sertifika',
       'projects_nav_link': 'Projelerim',
-      'lang_button': 'EN', // Türkçe olduğunda "EN" gösterecek
+      'lang_button': 'EN', 
       'hello_selva': 'Selamm, ben Selva',
       'about_me_paragraph': "Ben Selva Demir, 16 yaşında bir 11. sınıf öğrencisiyim. Teknolojiye duyduğum ilgi sayesinde mobil uygulama geliştirme, web sitesi yapımı ve frontend tasarımı alanlarında eğitim aldım ve kendimi bu alanlarda geliştirmeye çalışıyorum. Şuanda kodluyoruz'da aktif olarak gönüllülük yapıyorum.",
       'education_title': 'Eğitim',
@@ -36,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
       'education': 'Education',
       'certificates': 'Certificates',
       'projects_nav_link': 'Projects',
-      'lang_button': 'TR', // İngilizce olduğunda "TR" gösterecek
+      'lang_button': 'TR',
       'hello_selva': 'Hello, I\'m Selva',
       'about_me_paragraph': "I'm Selva Demir, a 16-year-old 11th grade student. My interest in technology led me to take courses in mobile app development, website building, and frontend design. I'm actively volunteering at Kodluyoruz.",
       'education_title': 'Education',
@@ -58,9 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  let currentLang = 'tr'; // Başlangıç dili Türkçe
-
-  // Metinleri mevcut dile göre güncelleme fonksiyonu
+  let currentLang = 'tr'; 
   function updateTexts() {
     document.querySelectorAll('[data-key]').forEach(el => {
       const key = el.getAttribute('data-key');
@@ -69,14 +66,13 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Dil değiştirme butonu metnini de güncelle
-    // Sadece .lang-text sınıfına sahip span'in içeriğini güncelliyoruz
     if (langText) {
         langText.textContent = translations[currentLang]['lang_button'];
     }
+
   }
 
-  // Hamburger menüsü
+
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('show');
@@ -98,18 +94,15 @@ window.addEventListener('DOMContentLoaded', () => {
     console.warn("HTML'inizde 'hamburger' veya 'nav-links' ID'li elementler bulunamadı.");
   }
 
-  // Dil değiştirme butonu
   if (langToggle && langText) {
     langToggle.addEventListener('click', () => {
       const newLang = currentLang === 'tr' ? 'en' : 'tr';
       currentLang = newLang;
 
-      updateTexts(); // Metinleri yeni dile göre güncelle
+      updateTexts(); 
     });
   } else {
     console.warn("HTML'inizde 'lang-toggle' butonu veya 'lang-text' span'i bulunamadı.");
   }
-
-  // Sayfa yüklendiğinde ilk dili ayarla
   updateTexts();
 });
